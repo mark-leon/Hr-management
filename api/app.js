@@ -24,6 +24,7 @@ app.post('/users', async (req, res) => {
   }
 })
 
+
 app.get('/users', async (req, res) => {
   try {
     const users = await User.findAll()
@@ -37,25 +38,6 @@ app.get('/users', async (req, res) => {
 
 
 
-
-// app.post("/upload", upload.single("file"), async (req, res) => {
-//   try {    
-//     if (req.file && req.file.mimetype.includes("csv")) {
-//       res.send({
-//         status: true,
-//         message: "File Uploaded!",
-//       });
-//     }
-//     else {
-//       res.status(400).send({
-//         status: false,
-//         data: "File Not Found :(",
-//       });
-//     }
-//   } catch (err) {
-//     res.status(500).send(err);
-//   }
-// });
   
 app.post("/upload", upload.single("file"), async (req, res) => {
   try {    
@@ -108,29 +90,3 @@ app.listen({port : 5000}, async() =>{
   await sequelize.sync()
   console.log("Server is running");
 })
-
-
-        // const user = [];
-        // fs.createReadStream(req.file.filename)
-        //     .pipe(csv.parse({ headers: true }))
-        //     .on('error', error => {
-        //         console.error(error);
-        //         throw error.message;
-        //     })
-        //     .on('data', row => {
-        //         user.push(row);
-        //         console.log(row);
-        //     })
-        //     .on('end', () => {
-               
-        //         User.bulkCreate(user).then(() => {
-        //             const result = {
-        //                 status: "ok",
-        //                 filename: req.file.originalname,
-        //                 message: "Upload Successfully!",
-        //             }
-    
-        //             res.json(result);
-        //         });    
-        //     });
-    
