@@ -1,6 +1,6 @@
 
 
-LIVE DEMO URL:  https://res-countries-information.netlify.app/
+
 
 # Getting Started with Create React App
 
